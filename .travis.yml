@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "9"
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+- ng lint
+- ng build --prod #--base-href URL ref
+- docker build -t reviewit-frontend .
