@@ -1,0 +1,31 @@
+# Pipeline build and docker image build for ReviewIT frontend
+
+# Only trigger on master branch
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+# varialbes
+variables:
+  imageName: 'reviewit-frontend:$(build.buildId)'
+
+# Download NodeJs
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.13.0'
+  displayName: 'Install Node.js v10.13.0'
+
+# Install Angular CLI and build
+- script: |
+    npm install -g @angular/cli
+    npm install --save-dev @angular-devkit/build-angular
+    ng lint
+    ng build --prod
+  displayName: 'npm install and build'
+
+# Docker build using Dockerfile
+- script: docker build -f Dockerfile -t $(imageName) .
+  displayName: 'docker build'
