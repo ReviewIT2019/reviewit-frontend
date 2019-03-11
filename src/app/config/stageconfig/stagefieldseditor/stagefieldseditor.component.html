@@ -1,0 +1,61 @@
+<mat-card>
+    <h5 class="col-sm-3">Stage Designer</h5>
+    <div class="col-sm">
+      <button type="button" class="btn btn-primary" (click)="save()" label="Save fields">Save fields</button>
+    </div>
+</mat-card>
+
+<div *ngIf="model" class="row">
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-title>
+                Available Fields
+            </mat-card-title>
+            <div class="card-block">
+                <div class="list-group" style="min-height: 50px;" dnd-sortable-container [sortableData]="model.AvailableFields" [dropZones]="['datafields']">
+                    <div *ngFor="let field of model.AvailableFields; let i = index" class="list-group-item" dnd-sortable [dragEnabled]="true"
+                        [dragData]="field" [sortableIndex]="i">
+                        {{field.Name}}
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-title>
+                Visible Fields
+            </mat-card-title>
+            <div class="card-block">
+                <div class="list-group" style="min-height: 50px;" dnd-sortable-container [sortableData]="model.VisibleFields" [dropZones]="['datafields']">
+                    <div *ngFor="let field of model.VisibleFields; let i = index" class="list-group-item" dnd-sortable [dragEnabled]="true" [dragData]="field"
+                        [sortableIndex]="i">
+                        {{field.Name}}
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-title>
+                Requested Fields
+            </mat-card-title>
+            <div class="card-block">
+                <div class="list-group" style="min-height: 50px;" dnd-sortable-container [sortableData]="model.RequestedFields" [dropZones]="['datafields']">
+                    <div *ngFor="let field of model.RequestedFields; let i = index" class="list-group-item" dnd-sortable [dragEnabled]="true"
+                        [dragData]="field" [sortableIndex]="i">
+                        <div>{{field.Name}}</div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<!--
+<p class="text-muted">
+    Here you can drag-and-drop data fields. The available fields are all the fields you have available in this study. The visible
+    fields are those data that will be displayed to the user. The requested fields are those data that the researcher will
+    be promoted to edit. You can add more data fields in the study configuration tab.
+</p>
+</div>-->

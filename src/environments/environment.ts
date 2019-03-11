@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: 'https://reviewitapi.azurewebsites.net/api/',
+  //api: 'http://localhost:2529/api/',
+  blob: 'https://reviewitblob2.blob.core.windows.net/reviewitblob2/'
 };
 
 /*

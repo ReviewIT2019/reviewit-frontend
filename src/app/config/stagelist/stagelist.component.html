@@ -1,0 +1,12 @@
+<mat-card *cardInit="obs">
+    <mat-card-content>
+        <mat-grid-list cols="8" rowHeight="100px">
+            <mat-grid-tile (click)="add()"><i class="fa fa-plus"></i></mat-grid-tile>
+            <mat-grid-tile [routerLink]="['stage/', detail.Id, 'stagedetails']" [routerLinkActive]="['selected']" *ngFor="let detail of model">
+                     #{{detail.Id}} - {{detail.Name}} 
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
+
+<router-outlet></router-outlet>

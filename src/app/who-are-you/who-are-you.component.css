@@ -1,0 +1,10 @@
+
+
+mat-grid-tile.user{
+    background-color: lightgray;
+    cursor: pointer;
+}
+mat-grid-tile.user:hover{
+    background-color: #0084FF;
+    color: white;
+}

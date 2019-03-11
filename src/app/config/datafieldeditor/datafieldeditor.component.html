@@ -1,0 +1,67 @@
+<mat-card>
+  <mat-card-title>
+    <h5 class="col-sm-3">Data Field Editor</h5>
+    <div class="col-sm">
+      <button type="button" class="btn btn-primary" (click)="save()" label="Save fields">Save fields</button>
+    </div>
+  </mat-card-title>
+</mat-card>
+
+<div class="row">
+  <div class="col-sm-6">
+    <mat-card>
+      <mat-card-title class="row">
+        <h5 class="col-sm-10">Fields</h5>
+        <div class="col-sm">
+          <a (click)="addNewField()" class="btn btn-sm btn-default"><i class="fa fa-plus"></i></a>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <div>
+          <a *ngIf="fields.length == 0"> You have no fields... </a>
+          <button (click)="selection = field" style="margin:5px;" *ngFor="let field of fields" [class.btn-primary]="field === selection"
+            class="btn">{{field.Name}}</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6" *ngIf="selection">
+    <mat-card>
+      <mat-card-content>
+        <dl class="row">
+          <dl class="col-sm-4">
+            <p><strong>Field title:</strong></p>
+          </dl>
+          <dd class="col-sm">
+            <input type="text" pInputText [(ngModel)]="selection.Name" />
+          </dd>
+        </dl>
+        <dl class="row">
+          <dl class="col-sm-4">
+            <p><strong>Field Type:</strong></p>
+          </dl>
+          <dd class="col-sm">
+            <p-radioButton name="groupname" label="String" value="0" [(ngModel)]="selection.DataType"></p-radioButton>
+          </dd>
+          <dd class="col-sm">
+            <p-radioButton name="groupname" label="Number" value="4" [(ngModel)]="selection.DataType"></p-radioButton>
+          </dd>
+          <dd class="col-sm offset-sm-4">
+            <p-radioButton class="mute" [disabled]="true" name="groupname" label="Radio Button" value="2" [(ngModel)]="selection.DataType"></p-radioButton>
+          </dd>
+          <dd class="col-sm offset-sm-4">
+            <p-radioButton name="groupname" label="Boolean" value="1" [(ngModel)]="selection.DataType"></p-radioButton>
+          </dd>
+          <dd class="col-sm offset-sm-4">
+            <p-radioButton class="mute" [disabled]="true" name="groupname" label="Checkbox" value="3" [(ngModel)]="selection.DataType"></p-radioButton>
+          </dd>
+          <dd class="col-sm offset-sm-4">
+            <p-radioButton name="groupname" label="PDF Resource" value="6" [(ngModel)]="selection.DataType"></p-radioButton>
+          </dd>
+        </dl>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

@@ -1,0 +1,19 @@
+<mat-card *cardInit="obs">
+  <mat-card-title>
+    <div class="col-sm-10">
+      <h5>Your studies</h5>
+    </div>
+    <div class="col-sm">
+      <a (click)="newStudy()" class="btn btn-sm btn-default"><i class="fa fa-plus"></i></a>
+    </div>
+  </mat-card-title>
+</mat-card>
+
+<mat-card class="r-list" *ngFor="let studyDetail of model">
+  <div class="col-sm-10 r-list-primary" [routerLink]="['task', 'study', studyDetail.Id]">
+    <a>{{studyDetail.Name}}</a>
+  </div>
+  <div class="col-sm-2 r-list-secondary">
+    <span class="btn btn-sm btn-default" [routerLink]="['config', studyDetail.Id, 'studydetails']"><i class="fa fa-wrench"></i></span>
+  </div>
+</mat-card>

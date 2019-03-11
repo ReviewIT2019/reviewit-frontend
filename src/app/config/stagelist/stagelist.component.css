@@ -1,0 +1,20 @@
+mat-card-button{
+	height: 100%;
+	width: 100%;
+	background-color: lightgray;
+}
+
+mat-grid-tile{
+    background-color: lightgray;
+    cursor: pointer;
+}
+mat-grid-tile:hover{
+    background-color: grey;
+}
+mat-grid-tile.selected{
+    background-color: #0084FF;
+    color: white;
+}
+mat-grid-tile.selected:hover{
+    background-color: #006ace;
+}

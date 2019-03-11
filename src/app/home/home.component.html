@@ -1,0 +1,21 @@
+<div class="container" *ngIf="!userService.getUser">
+    <div class="row m-x-auto" style="min-height: 300px;">
+        <br>
+        <br>
+        <h1>Welcome to Reviewit</h1>
+    </div>
+    <div class="row m-x-auto">
+        <h4>Create a user or sign in to begin!</h4>
+    </div>
+</div>
+
+<div class="container" *ngIf="userService.getUser">
+    <div class="col-md-6">
+        <mat-card>
+            <mat-card-content>Recent changes...</mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-md-6">
+        <app-studylist></app-studylist>
+    </div>
+</div>

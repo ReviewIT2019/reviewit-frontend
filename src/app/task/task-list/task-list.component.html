@@ -1,0 +1,37 @@
+<mat-card *cardInit="obs">
+  <mat-card-title>
+    Tasks
+  </mat-card-title>
+  <mat-card-content *ngIf="model">
+    <div class="card-block card-text" *ngIf="model.Tasks.length == 0">
+      You have no tasks in this stage
+    </div>
+    <div class="card-block table" *ngIf="model.Tasks.length > 0">
+      <div class="row">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <th>#</th>
+              <th *ngFor="let field of model.Fields">{{field.Name}}</th>
+              <th style="text-align:center;"><i class="fa fa-filter"></i></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let task of model.Tasks">
+                <th>{{task.Id}}</th>
+                <td *ngFor="let data of task.Data; let i = index">
+                  <!--<field-dyn [field]="model.Fields[i]" [data]="data"></field-dyn>-->
+                </td>
+                <td style="text-align:center;" [ngSwitch]="task.TaskState">
+                  <span *ngSwitchCase="0" class="label label-default">new</span>
+                  <span *ngSwitchCase="1" class="label label-default">New</span>
+                  <span *ngSwitchCase="2" class="label label-default">In Progress</span>
+                  <span *ngSwitchCase="3" class="label label-default">Done</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

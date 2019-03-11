@@ -1,0 +1,14 @@
+<div class="container">
+    <mat-card *cardInit="obs">
+        <mat-card-title>
+            Select a stage to work on
+        </mat-card-title>
+        <mat-card-content>
+            <mat-grid-list cols="8" rowHeight="100px">
+                <mat-grid-tile [routerLink]="['../../stage', detail.Id, 'details']" style="background-color: lightgrey;" *ngFor="let detail of model">
+                        #{{detail.Id}} - {{detail.Name}} 
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</div>
