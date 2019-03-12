@@ -15,7 +15,7 @@ export class Sharedstagelist {
     }
 
     getDetail(id: number){
-        return this.details.filter(d => d.Id === id)[0];
+        return this.details.filter(d => d.id === id)[0];
     }
 
 }

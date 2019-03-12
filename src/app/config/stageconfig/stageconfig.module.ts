@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms'
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRippleModule } from '@angular/material'
 //import { DndModule } from 'ng2-dnd';
 import { AutoCompleteModule, SliderModule, MessagesModule } from 'primeng/primeng'
@@ -16,7 +17,7 @@ import { ReviewStrategyComponent } from './reviewstrategy/reviewstrategy.compone
 import { ReviewstrategyService } from './reviewstrategy/reviewstrategy.service'
 
 @NgModule({
-  imports:      [ CommonModule, RouterModule, FormsModule, MatRippleModule, AutoCompleteModule, SliderModule, MessagesModule ],
+  imports:      [ CommonModule, RouterModule, FormsModule, MatRippleModule, MatGridListModule, AutoCompleteModule, SliderModule, MessagesModule ],
   providers:    [ Sharedstagelist, StagedetailsService, StagefieldseditorService, ReviewstrategyService ],
   declarations: [ StageconfigComponent, StagedetailsComponent, StagefieldseditorComponent, ReviewStrategyComponent ],
   exports:      [ ],

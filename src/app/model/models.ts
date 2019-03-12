@@ -81,9 +81,9 @@ export class StageFieldsDTO {
 	VisibleFields: FieldDTO[];
 }
 export class StageDetailsDTO {
-	Description: string;
-	Id: number;
-	Name: string;
+	description: string;
+	id: number;
+	name: string;
 }
 export class StudyDetailsDTO {
   id: number;

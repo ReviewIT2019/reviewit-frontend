@@ -1,11 +1,11 @@
 import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule }       from '@angular/common';
 import { FormsModule }        from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-import {MatCardModule} from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material';
 import { InputTextModule, RadioButtonModule, AutoCompleteModule, SliderModule, MessagesModule, ButtonModule, DropdownModule } from 'primeng/primeng';
 import { SharedModule } from '../shared';
@@ -37,7 +37,7 @@ import { StagelistService } from './stagelist/stagelist.service';
 import { StagelistComponent } from './stagelist/stagelist.component';
 
 @NgModule({
-  imports:      [ routing, StageconfigModule, RouterModule, ModalModule, MatRippleModule, MatCardModule, TooltipModule, FileUploadModule, HttpClientModule, DropdownModule, ReactiveFormsModule, SharedModule, InputTextModule, RadioButtonModule, CommonModule, FormsModule, ButtonModule, AutoCompleteModule, SliderModule, MessagesModule, CriteriaconfigModule],
+  imports:      [ routing, StageconfigModule, RouterModule, ModalModule, MatRippleModule, MatCardModule, MatGridListModule, TooltipModule, FileUploadModule, HttpClientModule, DropdownModule, ReactiveFormsModule, SharedModule, InputTextModule, RadioButtonModule, CommonModule, FormsModule, ButtonModule, AutoCompleteModule, SliderModule, MessagesModule, CriteriaconfigModule],
   providers:    [ StudydetailsService, StudysourcesService, StudydetailsResolve, Sharedstagelist, StagelistService, StudymembersService, DatafieldeditorService, ConfigService ],
   declarations: [ ConfigComponent, StudyConfigComponent, StudysourcesComponent, StagelistComponent, StudymembersComponent, DatafieldeditorComponent ],
   exports:      [ ],

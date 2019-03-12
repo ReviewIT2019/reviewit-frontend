@@ -5,6 +5,7 @@ import { routing } from './task.routes';
 import { SharedModule } from '../shared';
 import { MatRippleModule } from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { TaskDetailsComponent, TasklistComponent } from './';
 import { FieldDynModule } from '../field-dyn/field-dyn.module';
@@ -16,7 +17,7 @@ import { TaskListService } from './task-list/task-list.service'
 import { TaskDetailsService } from './task-details/task-details.service'
 
 @NgModule({
-  imports:      [ routing, RouterModule, SharedModule, FieldDynModule, MatRippleModule, MatCardModule ],
+  imports:      [ routing, RouterModule, SharedModule, FieldDynModule, MatRippleModule, MatCardModule, MatGridListModule],
   providers:    [ TaskDashboardService, StagelistService, TaskListService, TaskDetailsService ],
   declarations: [ TaskDetailsComponent, TasklistComponent, TaskDashboard, StagelistComponent ],
 })

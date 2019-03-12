@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router'
-
 import { StageDetailsDTO } from "../../model/models";
 import { StagelistService } from './stagelist.service';
 

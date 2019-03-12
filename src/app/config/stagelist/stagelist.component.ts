@@ -8,7 +8,6 @@ import { StagelistService } from './stagelist.service'
 import { Sharedstagelist } from './sharedstagelist.service'
 
 @Component({
-
     selector: 'app-stageconfig',
     templateUrl: 'stagelist.component.html',
     styleUrls: ['stagelist.component.css'],
@@ -48,7 +47,7 @@ export class StagelistComponent {
         let dto = new StageDetailsDTO();
         this.api.create(this.studyId, dto).subscribe(
             id => {
-                dto.Id = id,
+                dto.id = id,
                     this.model.push(dto);
             },
             error => this.msg.addError(error)
