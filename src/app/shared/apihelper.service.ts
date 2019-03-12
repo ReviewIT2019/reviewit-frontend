@@ -5,6 +5,9 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 //import {CookieService} from 'angular2-cookie/core';
 import {UserService} from '../core';
+import { CookieService } from 'ngx-cookie-service';
+
+
 
 export interface IRequestOptions {
   body?: any;
@@ -20,17 +23,17 @@ export interface IRequestOptions {
 export class ApiHelper {
 
     constructor(
-
+        private _cookieService: CookieService,
         private user: UserService
         ) { }
 
     public AuthOptions(): IRequestOptions {
 
-      //let token = this._cookieService.get('token');
+      let token = this._cookieService.get('token');
       return {
         headers: new HttpHeaders({
           'Content-Type': 'application/json; charset=utf-8',
-          //'Authorization': token
+          'Authorization': token
         }),
         observe: 'response' as 'body'
       };

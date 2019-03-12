@@ -30,6 +30,7 @@
     "ng2-bootstrap": "latest",
     "ng2-file-upload": "latest",
     "ng2-pdf-viewer": "^5.2.3",
+    "ngx-cookie-service": "^2.1.0",
     "path": "^0.12.7",
     "primeng": "latest",
     "rxjs": "~6.3.3",

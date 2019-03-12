@@ -4,6 +4,7 @@ import {
 import { CommonModule }      from '@angular/common';
 
 import { UserService, MessageService }       from './services';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -11,7 +12,7 @@ import { UserService, MessageService }       from './services';
   imports:      [ CommonModule ],
   declarations: [ ],
   exports:      [ ],
-  providers:    [ UserService, MessageService ]
+  providers:    [ UserService, MessageService, CookieService ]
 })
 export class CoreModule {
 }
