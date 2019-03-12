@@ -103,10 +103,10 @@ export class StudyMemberDTO {
 	Role: ResearcherRole;
 }
 export class UserDetailsDTO {
-	Email: string;
-	FirstName: string;
-	Id: number;
-	LastName: string;
+	email: string;
+	firstName: string;
+	id: number;
+	lastName: string;
 }
 export class KeyValuePair<TKey, TValue> {
 	Key: TKey;

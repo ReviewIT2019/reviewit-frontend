@@ -1,7 +1,7 @@
 
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {Observable, of, from } from 'rxjs';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -20,10 +20,17 @@ export class WhoAreYouService {
 
     public get(): Observable<UserDetailsDTO[]> {
         let url = `${environment.api}user`;
+        // TODO: ADD OPTIONS
         let options = this.apihelper.JsonOptions();
-        let users = this.http.get<UserDetailsDTO[]>(url, options)
+        let users = this.http.get<UserDetailsDTO[]>(url)
+          .pipe(
+            tap( // Log the result or error
+              data => console.log("log", data),
+              error => console.log("log", error)
+            )
+          )
           .catch(this.apihelper.handleError);
-      return users;
+        return users;
     }
 
     public create(dto: UserDetailsDTO): Observable<UserDetailsDTO> {

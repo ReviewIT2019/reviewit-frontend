@@ -6,7 +6,6 @@ import { UserDetailsDTO } from '../../model/models';
 
 
 @Component({
-  
   selector: 'app-usernav',
   templateUrl: 'usernav.component.html',
   styleUrls: ['usernav.component.css']

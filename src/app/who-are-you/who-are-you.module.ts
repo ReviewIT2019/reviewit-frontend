@@ -17,9 +17,8 @@ import { BrowserModule } from '@angular/platform-browser';
     MatRippleModule,
     MatCardModule,
     MatGridListModule
-
   ],
-  declarations: [WhoAreYouComponent],
+  declarations: [ WhoAreYouComponent ],
   providers: [ WhoAreYouService ]
 })
 export class WhoAreYouModule { }

@@ -39,7 +39,7 @@ export class ApiHelper {
     public UidJsonOptions(): IRequestOptions {
 
       const reqOpts : IRequestOptions = {
-        params: new HttpParams().set('uid', this.user.getUser.Id.toString()),
+        params: new HttpParams().set('uid', this.user.getUser.id.toString()),
         headers: new HttpHeaders({
           'Content-Type': 'application/json; charset=utf-8'
         }),
@@ -55,7 +55,7 @@ export class ApiHelper {
         headers: new HttpHeaders({
           'Content-Type': 'application/json; charset=utf-8'
         }),
-        observe: 'response'
+        observe: 'response' as 'body'
       };
 
       return reqOpts;

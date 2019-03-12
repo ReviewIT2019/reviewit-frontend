@@ -30,7 +30,7 @@ export class WhoAreYouComponent implements OnInit {
     this.obs = this.service.get();
     this.obs.subscribe(
       dto => {this.model = dto},
-      error => this.msg.addError(error)
+      error => {this.msg.addError(error)}
     )
   }
 
