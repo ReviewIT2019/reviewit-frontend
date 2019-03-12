@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-//import { CookieService } from 'angular2-cookie/core';
 import { CookieService } from 'ngx-cookie-service';
-
-
 import { Router } from '@angular/router';
-
 import { UserDetailsDTO } from '../../model/models';
 
 @Injectable()
@@ -39,7 +35,5 @@ export class UserService {
     this._cookieService.deleteAll('user');
     this.router.navigate(['who']);
   }
-
-
 
 }

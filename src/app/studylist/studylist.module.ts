@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { MatRippleModule } from '@angular/material'
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared';
 import { StudylistComponent } from './studylist.component';
 import { RouterModule } from '@angular/router';

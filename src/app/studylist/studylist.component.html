@@ -10,10 +10,10 @@
 </mat-card>
 
 <mat-card class="r-list" *ngFor="let studyDetail of model">
-  <div class="col-sm-10 r-list-primary" [routerLink]="['task', 'study', studyDetail.Id]">
-    <a>{{studyDetail.Name}}</a>
+  <div class="col-sm-10 r-list-primary" [routerLink]="['task', 'study', studyDetail.id]">
+    <a>{{studyDetail.title}}</a>
   </div>
   <div class="col-sm-2 r-list-secondary">
-    <span class="btn btn-sm btn-default" [routerLink]="['config', studyDetail.Id, 'studydetails']"><i class="fa fa-wrench"></i></span>
+    <span class="btn btn-sm btn-default" [routerLink]="['config', studyDetail.id, 'studydetails']"><i class="fa fa-wrench"></i></span>
   </div>
 </mat-card>

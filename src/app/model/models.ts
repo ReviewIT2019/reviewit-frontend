@@ -86,9 +86,9 @@ export class StageDetailsDTO {
 	Name: string;
 }
 export class StudyDetailsDTO {
-	Description: string;
-	Id: number;
-	Name: string;
+  id: number;
+  title: string;
+  description: string;
 }
 export class TaskFieldDTO {
 	DataType: DataType;

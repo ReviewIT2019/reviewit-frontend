@@ -1,9 +1,7 @@
 
 import { Component, Input } from '@angular/core';
-
 import { FieldCriteriaDTO } from '../../../model/models'
 import { SelectItem } from 'primeng/primeng';
-
 
 @Component({
     selector: 'boolean-criteria',

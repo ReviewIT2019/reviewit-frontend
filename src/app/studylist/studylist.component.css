@@ -1,7 +1,7 @@
-.mdlistitem:hover{
+.matlistitem:hover{
     background-color: lightgrey;
 }
-.mdlistitemconfig:hover{
+.matlistitemconfig:hover{
     background-color: lightblue;
 }
 

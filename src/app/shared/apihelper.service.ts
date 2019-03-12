@@ -40,17 +40,29 @@ export class ApiHelper {
     }
 
     public UidJsonOptions(): IRequestOptions {
-
+      console.log(this.user.getUser.id.toString());
       const reqOpts : IRequestOptions = {
         params: new HttpParams().set('uid', this.user.getUser.id.toString()),
         headers: new HttpHeaders({
           'Content-Type': 'application/json; charset=utf-8'
         }),
-        observe: 'response'
+        observe: 'response' as 'body'
       };
 
       return reqOpts;
     }
+
+  public UidJsonOptions2(): IRequestOptions {
+    console.log(this.user.getUser.id.toString());
+    const reqOpts : IRequestOptions = {
+      params: new HttpParams().set('uid', this.user.getUser.id.toString()),
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json; charset=utf-8'
+      })
+    };
+
+    return reqOpts;
+  }
 
     public JsonOptions(): IRequestOptions {
       const reqOpts : IRequestOptions = {
